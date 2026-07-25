@@ -12,10 +12,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const allowedOrigins = [
-  "http://localhost:6000",
-  "https://bday-preeti.netlify.app/",
-];
+const allowedOrigins = ["https://bday-preeti.netlify.app/"];
 
 app.use(
   cors({
