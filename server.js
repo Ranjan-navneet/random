@@ -11,17 +11,13 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
-const allowedOrigins = ["https://bday-preeti.netlify.app/"];
-
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: "https://bday-preeti.netlify.app",
     credentials: true,
   }),
 );
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || "*" }));
 app.use(express.json());
 
 app.get("/api/health", (req, res) => res.json({ status: "ok" }));
